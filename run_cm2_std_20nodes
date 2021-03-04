@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#SBATCH -o slurm.%j.out
+#SBATCH -e slurm.%j.err
+#SBATCH -J aims
+
+#SBATCH --get-user-env
+#SBATCH --clusters=cm2
+#SBATCH --partition=cm2_std
+#SBATCH --nodes=20
+#SBATCH --ntasks-per-node=28
+#SBATCH --export=NONE
+
+#SBATCH --time=72:00:00
+
+source /etc/profile.d/modules.sh
+
+module load python/3.6_intel
+source activate slab
+
+python3 relax.py >& log

@@ -1,0 +1,8 @@
+interphases/Minislabs/aims/[-3.  2.  1.]-2/s29_folder/run_aims_cm2_tiny_1nodes
+interphases/Minislabs/aims/[-3.  2.  1.]-2/s137_folder/run_aims_cm2_tiny_1nodes
+interphases/Minislabs/aims/[-3.  2.  1.]2/s29_folder/run_aims_cm2_tiny_1nodes
+interphases/Minislabs/aims/[-3.  2.  1.]2/s137_folder/run_aims_cm2_tiny_1nodes
+interphases/Minislabs/aims/[ 2. -1.  3.]-3/s29_folder/run_aims_cm2_tiny_1nodes
+interphases/Minislabs/aims/[ 2. -1.  3.]-3/s137_folder/run_aims_cm2_tiny_1nodes
+interphases/Minislabs/aims/[-3. -1.  2.]-3/s29_folder/run_aims_cm2_tiny_1nodes
+interphases/Minislabs/aims/[-3. -1.  2.]-3/s137_folder/run_aims_cm2_tiny_1nodes

@@ -1,0 +1,50 @@
+#!/usr/bin/env python
+
+import argparse
+import time
+from subprocess import Popen
+
+
+def main():
+    """
+    A script for submission of calculations from directories listed in files
+    which are provided as arguments to the script. Lines in files starting
+    with '#' are ignored.
+    :return:
+    """
+    parser = argparse.ArgumentParser(
+        description='Submits calculations from lists to SuperMUC (default) '
+                    'or HPC(with --sbatch flag)'
+    )
+    parser.add_argument('list', type=str, nargs='+',
+                        help='list with directories to simulations')
+   # parser.add_argument('--sbatch', action='store_true', default=False,
+    #                    help='Submit with sbatch for HPC')
+    parser.add_argument('--files', action='store_true', default=False,
+                        help='lists contain run files, not directories')
+    parser.add_argument('-d', '--delay', type=int, default=1,
+                        help='Delay time between two consecutive submittions')
+
+    args = parser.parse_args()
+    submitter = 'sbatch' 
+    #if args.sbatch else 'llsubmit'
+    for l in args.list:
+        print(l)
+        with open(l, 'r') as f:
+            lines = f.readlines()
+        # Delete commented lines
+        for line in lines:
+            stripped_line = line.strip()
+            if stripped_line[0] != '#':
+                """
+                if args.files:
+                    Popen([submitter, stripped_line], cwd='.')
+                    time.sleep(args.delay)
+                else:
+                """
+                Popen([submitter, 'run'], cwd=stripped_line)
+                time.sleep(args.delay)
+
+
+if __name__ == '__main__':
+    main()
